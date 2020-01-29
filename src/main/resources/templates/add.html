@@ -24,7 +24,7 @@
         <a th:href="@{'/employers/add'}">Add Employers</a>
     </div>
 
-    <div class="form-group">
+
         <label th:for="skills">Skills</label>
         <th:block th:each="skill : ${skills}">
             <input type="checkbox" name="skills" th:value="${skill.id}">
@@ -32,9 +32,19 @@
         </th:block>
         <a th:href="@{'/skills/add'}">Add Skills</a>
     </div>
+<!--    <div class="form-group">-->
+<!--    <label>-->
+<!--        Skin type:-->
+<!--        <select name = 'Skills'>-->
+<!--            <th:block th:each="skill : ${skills}">-->
+<!--                <option value="${skill.id}" name="skills" >-->
+<!--                        </select>-->
+<!--                    </label>-->
 
-    <input type="submit" value="Add Job" />
-</form>
 
-</body>
-</html>
+
+                    <input type="submit" value="Add Job" />
+                </form>
+
+                </body>
+                </html>
