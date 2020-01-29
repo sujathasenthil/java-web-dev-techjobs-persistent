@@ -52,11 +52,11 @@ public class JobData {
         } else if (fieldName.equals("employer")){
             theValue = job.getEmployer().toString();
         } else {
-            theValue = job.toString();
+            theValue = job.getSkills().toString();
         }
-
         return theValue;
     }
+
 
     /**
      * Search all Job fields for the given term.
