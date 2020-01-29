@@ -32,8 +32,7 @@ public class EmployerController {
             return "employers/add";
         }
         employerRepository.save(newEmployer);
-        model.addAttribute("title", "All Employerss");
-        model.addAttribute("events", employerRepository.findAll());
+        model.addAttribute("employers", employerRepository.findAll());
         return "employers/view";
     }
 

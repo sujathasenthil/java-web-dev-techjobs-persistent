@@ -1,10 +1,10 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Employer extends AbstractEntity {
@@ -12,6 +12,10 @@ public class Employer extends AbstractEntity {
     @NotBlank(message="Location should not be empty or null!")
     @Size(min = 2, max= 30)
     private String location;
+
+    @OneToMany
+    @JoinColumn
+    private final List<Job> jobs=new ArrayList<>();
 
     public Employer() {
     }

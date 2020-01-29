@@ -33,7 +33,9 @@ public class SkillController {
             return "skills/add";
         }
         skillRepository.save(newSkill);
-        return "redirect:";
+        model.addAttribute("skills", skillRepository.findAll());
+      //  return "redirect:";
+        return "skills/index";
     }
 
     @GetMapping("view/{skillId}")
