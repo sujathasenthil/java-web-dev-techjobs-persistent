@@ -37,7 +37,7 @@ public class HomeController {
         model.addAttribute("title", "My Jobs");
         model.addAttribute("jobs", jobRepository.findAll());
         model.addAttribute("employers",employerRepository.findAll());
-        //model.addAttribute("skills",skillRepository.findAll());
+        model.addAttribute("skills",skillRepository.findAll());
         return "index";
     }
 
@@ -45,7 +45,6 @@ public class HomeController {
     public String displayAddJobForm(Model model) {
         model.addAttribute("title", "Add Job");
         model.addAttribute(new Job());
-        model.addAttribute("jobs",jobRepository.findAll());
         model.addAttribute("employers",employerRepository.findAll());
         model.addAttribute("skills",skillRepository.findAll());
         return "add";
@@ -72,7 +71,6 @@ public class HomeController {
             model.addAttribute("employer", employer1);
             newJob.setSkills(skillObjs);
             newJob.setEmployer(employer1);
-            model.addAttribute("job",newJob.getId());
             model.addAttribute("job", jobRepository.findById(employer1.getId()));
             jobRepository.save(newJob);
             return "redirect:";
