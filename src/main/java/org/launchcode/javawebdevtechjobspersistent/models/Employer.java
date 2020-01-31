@@ -34,4 +34,8 @@ public class Employer extends AbstractEntity {
     public String toString() {
         return location;
     }
+
+    public List<Job> getJobs() {
+        return jobs;
+    }
 }
