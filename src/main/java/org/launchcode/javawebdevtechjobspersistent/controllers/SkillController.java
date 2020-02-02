@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
@@ -29,19 +28,17 @@ public class SkillController {
     @PostMapping("add")
     public String processAddSkillForm(@ModelAttribute @Valid Skill newSkill,
                                          Errors errors, Model model) {
-
         if (errors.hasErrors()) {
             return "skills/add";
         }
         skillRepository.save(newSkill);
         model.addAttribute("skills", skillRepository.findAll());
-       return "redirect:../add";
-       // return "skills/index";
+       return "redirect:../";
+        //return "redirect:../add";
     }
 
     @GetMapping("view/{skillId}")
     public String displayViewSkill(Model model, @PathVariable int skillId) {
-//        List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skillId);
         Optional<Skill> optSkill = skillRepository.findById(skillId);
         if (optSkill.isPresent()) {
             Skill skill = (Skill) optSkill.get();

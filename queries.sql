@@ -5,3 +5,4 @@ SELECT employer.name, employer.location FROM employer WHERE LOCATION="st.Louis";
 ## Part 3: Test it with SQL
 Drop TABLE job;
 ## Part 4: Test it with SQL
+SELECT skill.name,skill.description FROM techjobs.skill inner join job_skills on skill.id =job_skills.skills_id;
